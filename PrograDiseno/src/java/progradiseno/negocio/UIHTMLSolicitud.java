@@ -32,17 +32,33 @@ public class UIHTMLSolicitud extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UIHTMLSolicitud</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UIHTMLSolicitud at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        try {
+            String identificacion = request.getParameter("Id");
+            String nombre = request.getParameter("Nombre");
+            String correo = request.getParameter("Correo");
+            String celular = request.getParameter("Celular");
+            
+            String periodo = request.getParameter("Periodo");
+            String curso = request.getParameter("Curso");
+            String grupo = request.getParameter("Grupo");
+            
+            String descripcion = request.getParameter("Descripcion");
+            out.write("id= "+identificacion+"\n\t");
+            out.write("nombre= "+nombre+"\n\t");
+            out.write("correo= "+correo+"\n\t");
+            out.write("correo= "+celular+"\n\t");
+            
+            out.write("periodo= "+periodo+"\n\t");
+            out.write("curso= "+curso+"\n\t");
+            out.write("grupo= "+grupo+"\n\t");
+            
+            out.write("descripcion= "+descripcion+"\n\t");
+            
+        }catch(Exception e){
+            
+        }finally{ 
+            out.close();
         }
     }
 

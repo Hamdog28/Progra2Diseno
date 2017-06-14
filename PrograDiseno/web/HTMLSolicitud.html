@@ -42,80 +42,86 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>  
+      
+      
+      <br>
     <div class="container">
-        <h1>Ingresar Solicitud</h1>
-
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h1>Solicitud</h1>
+            </div>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="js/bootstrap.min.js"></script>
         
 
+        <div class="panel-body">
+            <form action="UIHTMLSolicitud" method="post">
+                <div class="form-group">
+                    <label for="Id">Carné / Identificacion </label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Id" name="Id" required>
+                </div>
 
-        <form>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Carné / Identificacion </label><font color="red"> *</font>
-          <input class="form-control" id="exampleInputEmail1" required>
-        </div>
-            
-        <div class="form-group">
-          <label >Nombre Completo </label><font color="red"> *</font>
-          <input  class="form-control" id="exampleInputPassword1" required>
-        </div>
-            
-        <div class="form-group">
-          <label for="exampleInputEmail1">Correo Electónico </label><font color="red"> *</font>
-          <input type="email" class="form-control" id="exampleInputEmail1" required>
-        </div>
-            
-        <div class="form-group">
-            <label for="exampleInputEmail1">Celular </label><font color="red"> *</font>
-          <input class="form-control" id="exampleInputEmail1" required>
-        </div>
-            
-        <div class="form-group">
-            <label>Periodo </label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-            
-        <div class="form-group">
-            <label>Curso </label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-            
-        <div class="form-group">
-            <label for="exampleInputEmail1">Grupo </label>
-          <select class="form-control">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-          </select>
-        </div>
-            
-        <div class="form-group">
-            <label for="exampleInputEmail1">Descripción </label><font color="red"> *</font>
-            <textarea class="form-control" id="exampleInputEmail1" required></textarea>
-        </div>
-        
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+                <div class="form-group">
+                  <label for="Nombre">Nombre Completo </label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                </div>
 
-      
+                <div class="form-group">
+                  <label for="Correo">Correo Electónico </label><font color="red"> *</font>
+                  <input type="email" class="form-control" id="Correo" name="Correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Celular">Celular </label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Celular" name="Celular" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Periodo">Periodo </label>
+                  <select class="form-control" id="Periodo" name="Periodo">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Curso">Curso </label>
+                  <select class="form-control" id="Curso" name="Curso">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Grupo">Grupo </label>
+                  <select class="form-control" id="Grupo" name="Grupo">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="Descripcion">Descripción </label><font color="red"> *</font>
+                    <textarea class="form-control" id="Descripcion" name="Descripcion" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+            </div>
+        <br>
     </div>
+        </div>
 
   </body>
 </html>
