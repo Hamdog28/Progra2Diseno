@@ -18,7 +18,7 @@
     <![endif]-->
   </head>
   <body>
-    
+  
  <div id="nav-placeholder">   
     <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
@@ -41,42 +41,21 @@ $.get("navbar.html", function(data){
         
 
         <div class="panel-body">
-            <form action="UIHTMLCrearSolicitud" method="post">
+            <form action="UIHTMLCrearSolicitud" method="POST">
                 <div class="form-group">
-                    <label for="Id">Carné / Identificacion </label><font color="red"> *</font>
+                    <label for="Id">Carné / Identificacion del Solicitante</label><font color="red"> *</font>
                   <input type="text" class="form-control" id="Id" name="Id" required>
                 </div>
 
                 <div class="form-group">
-                  <label for="Nombre">Nombre Completo </label><font color="red"> *</font>
-                  <input type="text" class="form-control" id="Nombre" name="Nombre" required>
-                </div>
-
-                <div class="form-group">
-                  <label for="Correo">Correo Electónico </label><font color="red"> *</font>
-                  <input type="email" class="form-control" id="Correo" name="Correo" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Celular">Celular </label><font color="red"> *</font>
-                  <input type="text" class="form-control" id="Celular" name="Celular" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="Periodo">Periodo </label>
-                  <select class="form-control" id="Periodo" name="Periodo">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
+                    <label for="Periodo">Periodo en el que se dio el problema</label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Periodo" name="Periodo" required>
                 </div>
 
                 <div class="form-group">
                     <label for="Curso">Curso </label>
                   <select class="form-control" id="Curso" name="Curso">
-                    <option>1</option>
+                    <option>IC1802</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
@@ -99,11 +78,33 @@ $.get("navbar.html", function(data){
                     <label for="Descripcion">Descripción </label><font color="red"> *</font>
                     <textarea class="form-control" id="Descripcion" name="Descripcion" required></textarea>
                 </div>
+                <br>
+                <br>
+                <h2>Datos del estudiante</h2>
+                <br>
+                <div class="form-group">
+                    <label for="Carne">Carné del Estudiante</label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Carne" name="Carne" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="Nombre">Nombre Completo </label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Nombre" name="Nombre" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="Correo">Correo Electónico </label><font color="red"> *</font>
+                  <input type="email" class="form-control" id="Correo" name="Correo" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="Celular">Celular </label><font color="red"> *</font>
+                  <input type="text" class="form-control" id="Celular" name="Celular" required>
+                </div>
 
                 <button type="submit" class="btn btn-primary">Enviar</button>
             </form>
             </div>
-        <br>
     </div>
         </div>
 
