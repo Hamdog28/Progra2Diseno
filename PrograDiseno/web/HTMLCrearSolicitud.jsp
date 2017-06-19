@@ -67,6 +67,8 @@ $.get("navbar.html", function(data){
                 <div class="form-group">
                     <label for="Periodo">Periodo en el que se dio el problema</label><font color="red"> *</font>
                   <input type="text" class="form-control" id="Periodo" name="Periodo" required>
+                  <small id="emailHelp" class="form-text text-muted">Ejemplo: IS2017 -> (I / II S Año)</small>
+  
                 </div>
                 
                 <div class="form-group">
@@ -90,6 +92,7 @@ $.get("navbar.html", function(data){
                 <div class="form-group">
                     <label for="Grupo">Grupo </label><font color="red"> *</font>
                   <input type="text" class="form-control" id="Grupo" name="Grupo" required>
+                  <small id="emailHelp" class="form-text text-muted">Ejemplo: 1, 2, 3, ...</small>
                 </div>
 
                 <div class="form-group">
