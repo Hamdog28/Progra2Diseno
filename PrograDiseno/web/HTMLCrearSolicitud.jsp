@@ -88,7 +88,7 @@ $.get("navbar.html", function(data){
 
 
                 <div class="form-group">
-                    <label for="Grupo">Grupo </label>
+                    <label for="Grupo">Grupo </label><font color="red"> *</font>
                   <input type="text" class="form-control" id="Grupo" name="Grupo" required>
                 </div>
 
