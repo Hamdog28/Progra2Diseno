@@ -5790,6 +5790,15 @@ button.list-group-item-danger.active:focus {
 .panel-danger > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #ebccd1;
 }
+
+.panel-custom-horrible-red {
+    border-color: #009933;
+}
+.panel-custom-horrible-red > .panel-heading {
+    background: #009933; 
+    color: #ffffff;
+    border-color: #009933;
+}
 .embed-responsive {
   position: relative;
   display: block;

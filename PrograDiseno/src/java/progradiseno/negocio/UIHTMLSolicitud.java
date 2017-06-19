@@ -7,11 +7,14 @@ package progradiseno.negocio;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import static java.lang.Integer.parseInt;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import proyectoresoluciones.datos.*;
+import proyectoresoluciones.negocio.Controlador;
 
 /**
  *
@@ -19,7 +22,13 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "UIHTMLSolicitud", urlPatterns = {"/UIHTMLSolicitud"})
 public class UIHTMLSolicitud extends HttpServlet {
+    Controlador controladorViejo = new Controlador();
+    Solicitud solicitud = new Solicitud();
+    Resolucion resolucion = new Resolucion();
+    int codigo;
 
+
+   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -34,27 +43,23 @@ public class UIHTMLSolicitud extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         try {
-            String identificacion = request.getParameter("Id");
-            String nombre = request.getParameter("Nombre");
-            String correo = request.getParameter("Correo");
-            String celular = request.getParameter("Celular");
+            codigo = parseInt(request.getParameter("Codigo"));
             
-            String periodo = request.getParameter("Periodo");
-            String curso = request.getParameter("Curso");
-            String grupo = request.getParameter("Grupo");
+            solicitud = controladorViejo.consultarSolicitud(codigo);
+            request.setAttribute("Solicitud",solicitud);
             
-            String descripcion = request.getParameter("Descripcion");
-            out.write("id= "+identificacion+"\n\t");
-            out.write("nombre= "+nombre+"\n\t");
-            out.write("correo= "+correo+"\n\t");
-            out.write("correo= "+celular+"\n\t");
             
-            out.write("periodo= "+periodo+"\n\t");
-            out.write("curso= "+curso+"\n\t");
-            out.write("grupo= "+grupo+"\n\t");
-            
-            out.write("descripcion= "+descripcion+"\n\t");
-            
+            if(solicitud.getIdSolicitante()!=null ){
+                request.setAttribute("Codigo",codigo);
+                if(solicitud.getEstado().name()=="TRAMITADA"){
+                    //Aqui va el generar html
+                }
+                request.getRequestDispatcher("HTMLSolicitud.jsp").forward(request, response); 
+            }else
+            {
+                request.setAttribute("Codigo",0);
+                request.getRequestDispatcher("HTMLInicio.jsp").forward(request, response); 
+            }
         }catch(Exception e){
             
         }finally{ 
@@ -101,4 +106,9 @@ public class UIHTMLSolicitud extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+
+    
+
+    
+    
 }
